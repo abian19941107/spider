@@ -8,6 +8,7 @@
 #     https://doc.scrapy.org/en/latest/topics/settings.html
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'jobble'
 
@@ -55,20 +56,28 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'jobble.middlewares.JobbleDownloaderMiddleware': 543,
-   'jobble.middlewares.UserAgentMiddleware': 543,
+    'jobble.middlewares.UserAgentMiddleware': 543,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware':None,
 }
-
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+# EXTENSIONS = {
+#    # 'scrapy.extensions.telnet.TelnetConsole': None,
+#     'scrapy.pipelines.images.ImagesPipeline':1,
+# }
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'jobble.pipelines.JobblePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'jobble.pipelines.JobblePipeline': 300,
+    'jobble.pipelines.JoboleImagePipeline': 1,
+    # 'scrapy.pipelines.images.ImagesPipeline':1,
+}
+# 指定item那个field为图片下载路径
+IMAGES_URLS_FIELD = "img_link"
+# 图片保存路径
+project_dir = os.path.abspath(os.path.dirname(__file__))
+IMAGES_STORE = os.path.join(project_dir, 'images')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -93,3 +102,14 @@ DOWNLOADER_MIDDLEWARES = {
 
 RETRY_ENABLED = False
 DOWNLOAD_TIMEOUT = 15
+
+LOG_LEVEL = 'INFO'
+
+
+# 数据库设置
+MYSQL_HOST = 'localhost'
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'password'
+MYSQL_DBNAME = 'spider'
+MYSQL_CHARSET = 'utf8'

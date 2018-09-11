@@ -109,6 +109,6 @@ class UserAgentMiddleware(object):
         中间件设置随机user_agent
         '''
         user_agent = UserAgent().random
-        request.headers.setdefault = ('User-Agent',user_agent)
+        request.headers.setdefault(b'User-Agent',user_agent)
         return None
 

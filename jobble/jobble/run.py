@@ -6,4 +6,5 @@ import os
 
 if __name__ == '__main__':
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-    execute('scrapy crawl jobble_article'.split())
+    # execute('scrapy crawl jobble_article'.split())
+    execute('scrapy crawl lagou'.split())
