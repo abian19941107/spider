@@ -113,3 +113,5 @@ MYSQL_USER = 'root'
 MYSQL_PASSWD = 'password'
 MYSQL_DBNAME = 'spider'
 MYSQL_CHARSET = 'utf8'
+
+USER_AGENT_TYPE = 'random'

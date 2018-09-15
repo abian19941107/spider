@@ -15,7 +15,7 @@ class LagouSpider(CrawlSpider):
     allowed_domains = ['www.lagou.com']
     start_urls = ['https://www.lagou.com/']
 
-
+    #  url 下载规则
     rules = (
         Rule(LinkExtractor(allow=r'zhaopin/.*'), follow=True),
         Rule(LinkExtractor(allow=r'gongsi/j\d+.html'),follow=True),
@@ -23,7 +23,12 @@ class LagouSpider(CrawlSpider):
     )
 
     def parse_job(self, response):
+        '''
+        item 下载
 
+        :param
+        :return
+        '''
         item_loader = LagouItemLoader(item=LagouJob(),response=response)
         item_loader.add_xpath('title','//div[@class="job-name"]/@title')
         item_loader.add_value('url',response.url)

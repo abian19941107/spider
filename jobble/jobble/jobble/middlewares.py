@@ -104,11 +104,19 @@ class JobbleDownloaderMiddleware(object):
 
 
 class UserAgentMiddleware(object):
+    @classmethod
+    def from_crawler(cls, crawler):
+        user_agent_type = crawler.settings.get('USER_AGENT_TYPE')
+        return cls(user_agent_type)
+
+    def __init__(self,user_agent_type):
+        self.user_agent = getattr(UserAgent(),user_agent_type)
+
+
     def process_request(self, request, spider):
         '''
         中间件设置随机user_agent
         '''
-        user_agent = UserAgent().random
-        request.headers.setdefault(b'User-Agent',user_agent)
+        request.headers.setdefault(b'User-Agent',self.user_agent)
         return None
 
