@@ -48,8 +48,8 @@
       <file leaf-file-name="use_selenium.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tools/use_selenium.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+            <state relative-caret-position="391">
+              <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
               <folding>
                 <element signature="e#25#55#0" expanded="true" />
               </folding>
@@ -280,7 +280,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16040955" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16040955" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.20226844" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25874126" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -588,8 +588,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/use_selenium.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        <state relative-caret-position="391">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
           <folding>
             <element signature="e#25#55#0" expanded="true" />
           </folding>
